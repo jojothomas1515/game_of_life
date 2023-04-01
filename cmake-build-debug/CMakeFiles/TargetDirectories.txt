@@ -1,0 +1,3 @@
+/home/jojo/CLionProjects/game_of_life/cmake-build-debug/CMakeFiles/game_of_life.dir
+/home/jojo/CLionProjects/game_of_life/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/jojo/CLionProjects/game_of_life/cmake-build-debug/CMakeFiles/rebuild_cache.dir
