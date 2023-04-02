@@ -2,11 +2,12 @@
 import time
 import tkinter as tk
 import random
-from utils import new_grid, set_block
+from utils import new_grid, set_block, print_matrix
 
-random.seed(1)
-grid = [[random.randint(0, 1) for _ in range(20)] for _ in range(20)]
+random.seed(2)
+grid = [[random.randint(0, 1) for _ in range(5)] for _ in range(5)]
 
+print_matrix(grid)
 app = tk.Tk()
 app.title("Conwey game of of life")
 app.geometry("800x600")
@@ -20,7 +21,7 @@ def updater(grid):
 
     for child in app.winfo_children():
         child.destroy()
-    grid= new_grid(grid, 20)
+    grid= new_grid(grid, 5)
 
     for i, val in enumerate(grid):
         for j, vj in enumerate(val):
@@ -30,6 +31,4 @@ def updater(grid):
 
     app.after(100, lambda :updater(grid))
 
-
-app.after(5, lambda :updater(grid))
 app.mainloop()

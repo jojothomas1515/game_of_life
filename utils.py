@@ -70,12 +70,3 @@ def print_matrix(matrix):
             print(f"{j} ", end=" ")
         print()
 
-if __name__ == '__main__':
-
-    print_matrix(grid)
-    print(grid[0][1])
-    print(checker(grid, 4, 1))
-    print()
-    grid = new_grid(old_grid=grid)
-    print()
-    print_matrix(grid)
