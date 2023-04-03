@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
 
-
-
 def checker(matrix, i, j):
     neighbors = 0
     if i != 0:
@@ -30,7 +28,7 @@ def checker(matrix, i, j):
 
 
 def new_grid(old_grid, n):
-    new_grid = [[0 for _ in range(n)] for _ in range(n)]
+    new_grid = [[0 for _ in range(n*2)] for _ in range(n)]
 
     for i, val in enumerate(old_grid):
         for j, _ in enumerate(val):
@@ -48,10 +46,6 @@ def new_grid(old_grid, n):
             # Comes back to life as if by reproduction
             if checker(old_grid, i, j) == 3 and old_grid[i][j] == 0:
                 new_grid[i][j] = 1
-
-    # for i, vali in enumerate(new_grid):
-    #     for j, vj in enumerate(vali):
-    #         old_grid[i][j] = vj
 
     return new_grid
 
