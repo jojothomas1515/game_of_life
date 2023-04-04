@@ -1,6 +1,7 @@
 ﻿#!/usr/bin/env python3
 import time
 import tkinter as tk
+from tkinter import ttk
 import random
 from utils import new_grid, set_block, print_matrix
 
@@ -17,7 +18,7 @@ class MainApp():
         self.app.geometry("1000x800")
         self.app.columnconfigure(0, weight=1)
         self.app.rowconfigure(0, weight=1)
-        self.grid = tk.Frame(self.app, width="1000px", padx="10px", pady="10px", bg="red", cursor="dot", height="600px")
+        self.grid = tk.Frame(self.app, width="1000px", padx="2px", pady="2px", bg="red", cursor="dot", height="600px")
         self.grid.grid(row=0, column=0)
         self.grid.grid_propagate(1)
 
@@ -28,6 +29,7 @@ class MainApp():
         self.nexts = tk.Button(master=self.button_con, text="Next", bg="green", command=self.next_grid)
         self.pause = tk.Button(master=self.button_con, text="Pause", bg="yellow", command=self.stop_run, )
         self.reset = tk.Button(master=self.button_con, text="Reset", bg="red", command=self.reset_grid)
+        self.clear = tk.Button(master=self.button_con, text="clear", bg="red", command=self.clear_grid)
         self.clear = tk.Button(master=self.button_con, text="clear", bg="red", command=self.clear_grid)
 
         self.play.pack(side=tk.LEFT)
@@ -44,7 +46,7 @@ class MainApp():
         for idxi, li in enumerate(self.m_grid):
             for idxj, val in enumerate(li):
                 self.g_buttons[idxi][idxj] = tk.Button(self.grid, height=1, width=1, pady="0px", padx="1px",
-                                                       highlightbackground="blue",
+                                                       highlightbackground="gray",
                                                        relief=tk.FLAT,
                                                        bg="{}".format("white" if val == 1 else "black"),
                                                        command=lambda i=idxi, j=idxj: self.set_grid(i, j))
@@ -101,7 +103,6 @@ class MainApp():
 
     def next_grid(self):
         self.update_grid()
-        self.__init__()
 
     def run(self):
         self.__playstate = True

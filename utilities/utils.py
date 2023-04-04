@@ -28,7 +28,7 @@ def checker(matrix, i, j):
 
 
 def new_grid(old_grid, n):
-    new_grid = [[0 for _ in range(n * 2)] for _ in range(n)]
+    new_grid = [[0 for _ in range(n*2)] for _ in range(n)]
 
     for i, val in enumerate(old_grid):
         for j, _ in enumerate(val):
@@ -50,18 +50,3 @@ def new_grid(old_grid, n):
     return new_grid
 
 
-def set_block(grid):
-    try:
-        grid[2][1] = 1
-        grid[2][2] = 1
-        grid[3][1] = 1
-        grid[1][1] = 1
-    except IndexError:
-        pass
-
-
-def print_matrix(matrix):
-    for i in matrix:
-        for j in i:
-            print(f"{j} ", end=" ")
-        print()
