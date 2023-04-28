@@ -1,6 +1,5 @@
-﻿#!/usr/bin/env python3
-"""Tkinter implementation of Conway's game of life."""
-
+#!/usr/bin/env python
+"""Implementaion of conway game of life with TKinter."""
 import random
 import time
 import tkinter as tk
@@ -172,5 +171,3 @@ class MainApp:
 if __name__ == '__main__':
     MainApp.grid_size(30)
     MainApp().mainloop()
-
-

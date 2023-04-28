@@ -4,8 +4,8 @@
 
 def checker(matrix, i, j):
     """
-    Checks the value of the cells surrounding the current target cell
-    including the diagonals.
+    Check the values of the cells surrounding the current target cell including the diagonals.
+
     Args:
         matrix (): the matrix use to implement the game of life cell.
         i (): the row index of the target cell.
@@ -13,7 +13,6 @@ def checker(matrix, i, j):
 
     Returns:
         The total number of neighbors.
-
     """
     neighbors = 0
     if i != 0:
@@ -43,7 +42,7 @@ def checker(matrix, i, j):
 
 def new_grid(old_grid, size):
     """
-    Takes in a matrix and set is cells on or off base on the following rules.
+    Take in a matrix and set it cells on/live or off/dead base on the following rules.
 
     Rules:
         1. Any live cell with fewer than two live neighbours dies, as if by underpopulation.
@@ -64,7 +63,6 @@ def new_grid(old_grid, size):
     for i, val in enumerate(old_grid):
         for j, _ in enumerate(val):
             # dies as if of underpopulation or overpopulation
-
             check = checker(old_grid, i, j)
             if (check < 2 or check > 3) and old_grid[i][j] == 1:
                 new_grid[i][j] = 0
@@ -75,7 +73,7 @@ def new_grid(old_grid, size):
             if check == 3 and old_grid[i][j] == 0:
                 new_grid[i][j] = 1
 
-    return new_grid  #
+    return new_grid
 #
 # def set_block(grid):
 #     try:
